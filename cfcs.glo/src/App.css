@@ -1,0 +1,852 @@
+/* --- Global Styles and Typography --- */
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #f4f7f6; /* Light background */
+}
+
+.App {
+  text-align: center;
+  padding: 0 20px 40px;
+}
+
+/* --- Header Styling --- */
+.App-header {
+  background-color: #007bff; /* Primary church color (blue) */
+  color: white;
+  padding: 20px 0;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.App-header h1 {
+  margin: 0;
+  font-size: 2.5em;
+}
+
+/* --- Main Container --- */
+.cfcs-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.cfcs-container h2 {
+  color: #333;
+  border-bottom: 2px solid #eee;
+  padding-bottom: 10px;
+  margin-top: 30px;
+}
+
+/* ------------------------------------ */
+/* --- Dashboard Summary Cards Styles --- */
+/* ------------------------------------ */
+
+.dashboard h3 {
+  color: #007bff;
+}
+
+.summary-cards-container {
+    display: flex; /* Display horizontally on desktop */
+    justify-content: space-around;
+    margin: 20px 0;
+}
+
+.summary-card {
+  flex: 1;
+  margin: 0 10px;
+  padding: 20px;
+  border-radius: 6px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.income-card { background-color: #e6f7e6; border: 1px solid green; }
+.expense-card { background-color: #ffe6e6; border: 1px solid red; }
+.balance-card { background-color: #e6f0ff; border: 2px solid blue; }
+
+.dashboard h4, .dashboard p {
+  margin: 5px 0;
+}
+
+.dashboard ul {
+    text-align: left;
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 10px;
+    border: 1px dashed #ccc;
+    border-radius: 4px;
+}
+
+/* ------------------------------------ */
+/* --- Transaction Form Styles --- */
+/* ------------------------------------ */
+
+.transaction-form-layout {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 6px;
+  gap: 15px;
+}
+
+.transaction-form-layout label {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  font-weight: bold;
+  flex: 1; 
+  min-width: 0;
+}
+
+.transaction-form-layout input[type="date"],
+.transaction-form-layout input[type="number"],
+.transaction-form-layout select {
+  padding: 8px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%;
+}
+
+.transaction-form-layout button {
+  background-color: #28a745; 
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  margin-top: 20px; 
+}
+
+.transaction-form-layout button:hover {
+  background-color: #1e7e34;
+}
+
+/* ------------------------------------ */
+/* --- Transaction List Table Styles --- */
+/* ------------------------------------ */
+
+.transaction-list {
+  overflow-x: auto; /* Allows table to scroll horizontally if content is too wide */
+  margin-top: 20px;
+}
+.transaction-list table {
+  min-width: 600px; 
+  width: 100%;
+  border-collapse: collapse;
+}
+.transaction-list th, .transaction-list td {
+  padding: 12px 8px;
+  text-align: left;
+}
+.transaction-list th {
+  background-color: #f1f1f1;
+  color: #333;
+  font-weight: bold;
+}
+.transaction-list tr:nth-child(even) {
+  background-color: #f9f9f9; 
+}
+.transaction-list tr:hover {
+  background-color: #f0f0ff; 
+}
+
+
+/* ------------------------------------ */
+/* --- Financial Report View (Intermediate) --- */
+/* ------------------------------------ */
+.report-view {
+    padding: 30px 10px;
+    margin-top: 20px;
+    border: 2px solid #007bff;
+    border-radius: 8px;
+    background-color: #ffffff;
+    text-align: left;
+}
+
+.report-header {
+    text-align: center;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.report-header h2 {
+    color: #007bff;
+    margin-bottom: 5px;
+}
+
+.report-header p {
+    font-size: 0.9em;
+    color: #666;
+}
+
+.report-section {
+    margin-bottom: 30px;
+    padding: 10px 0;
+}
+
+.report-section h3 {
+    color: #333;
+    border-bottom: 1px dashed #ccc;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+    font-size: 1.2em;
+}
+
+/* Button to move to the next step (Full Details) or to go back to summary */
+.report-details-btn {
+    /* Base style for report navigation buttons */
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    margin: 0 10px; 
+    transition: background-color 0.2s;
+}
+
+/* Default color for forward progression button (Summary -> Details) */
+.report-details-btn[style*="background-color: rgb(0, 123, 255)"] { /* Blue */
+    background-color: #007bff;
+}
+/* Color for sending to Viewer button (Details -> Viewer) */
+.report-details-btn[style*="background-color: rgb(40, 167, 69)"] { /* Green */
+    background-color: #28a745;
+}
+/* Color for back button (Details -> Summary) */
+.report-details-btn[style*="background-color: rgb(92, 99, 106)"] { /* Grey */
+    background-color: #5c636a;
+}
+
+
+/* Close Button Style (for Report View) */
+.report-close-btn {
+    background-color: #dc3545; /* Red close button */
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    margin: 0 10px; 
+    transition: background-color 0.2s;
+}
+
+
+/* ------------------------------------ */
+/* --- Full Transaction Details View (Table Page) --- */
+/* ------------------------------------ */
+
+.full-screen-details-view {
+    /* Full viewport coverage */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1000;
+    background-color: #ffffff; /* Clean white background for screenshot */
+    padding: 20px;
+    box-sizing: border-box;
+    overflow-y: auto; 
+}
+
+.full-details-header {
+    text-align: center;
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #007bff;
+}
+
+.full-details-header h2 {
+    margin: 5px 0;
+    color: #007bff;
+}
+
+.full-details-table-wrapper {
+    overflow-x: auto;
+}
+
+/* Shared styling for the report table */
+.report-table {
+    width: 100%;
+    min-width: 600px;
+    border-collapse: collapse;
+    font-size: 0.9em;
+    margin: 0 auto;
+}
+
+.report-table th, .report-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+.report-table th {
+    background-color: #f0f8ff;
+    color: #333;
+    font-weight: bold;
+}
+
+/* Close Button Style (for Full Details View) */
+.close-details-btn {
+    background-color: #dc3545; /* Red close button */
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 20px;
+    transition: background-color 0.2s;
+}
+
+.full-details-footer {
+    text-align: center;
+    padding: 20px 0;
+}
+
+
+/* ------------------------------------ */
+/* --- Viewer (Read-Only) Page Styles --- */
+/* ------------------------------------ */
+
+.viewer-view {
+    /* Reuses the full screen characteristics */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1000;
+    background-color: #f0f7f0; /* Slightly green tint for read-only status */
+    padding: 20px;
+    box-sizing: border-box;
+    overflow-y: auto; 
+}
+
+.viewer-header {
+    text-align: center;
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #28a745; /* Green border for secure view */
+}
+
+.viewer-header h2 {
+    margin: 5px 0;
+    color: #28a745;
+}
+
+.viewer-table-wrapper {
+    overflow-x: auto;
+}
+
+/* Close button for the viewer page */
+.close-viewer-btn {
+    background-color: #6c757d; /* Neutral grey close button */
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 20px;
+    transition: background-color 0.2s;
+}
+
+.viewer-footer {
+    text-align: center;
+    padding: 20px 0;
+}
+
+/* ------------------------------------ */
+/* --- Landing Page Styles --- */
+/* ------------------------------------ */
+
+.landing-page {
+    min-height: 100vh;
+    background: linear-gradient(180deg, #e6f0ff 0%, #ffffff 50%); /* Subtle gradient background */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 50px;
+}
+
+.landing-header {
+    margin-bottom: 40px;
+}
+
+.landing-title {
+    font-size: 3.5em;
+    color: #007bff;
+    margin: 0;
+    font-weight: 800;
+}
+
+.landing-subtitle {
+    font-size: 1.5em;
+    color: #555;
+    margin-top: 10px;
+}
+
+.landing-main {
+    max-width: 1200px;
+    width: 90%;
+}
+
+/* Hero Section */
+.landing-hero {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 60px 0;
+    margin-bottom: 50px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.hero-content {
+    max-width: 50%;
+    text-align: left;
+    padding: 0 40px;
+}
+
+.hero-content h2 {
+    font-size: 2.2em;
+    color: #333;
+    margin-top: 0;
+}
+
+.landing-cta-btn {
+    /* UPDATED: Change to blue to reflect navigation to Login/Authentication */
+    background-color: #007bff; 
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.1em;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 25px;
+    box-shadow: 0 4px 10px rgba(0, 123, 255, 0.4);
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+.landing-cta-btn:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+/* Features Section */
+.landing-features {
+    margin-top: 40px; /* Spacing above features */
+}
+.landing-features h3 {
+    color: #007bff;
+    font-size: 2em;
+    margin-bottom: 30px;
+}
+
+.features-grid {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    text-align: center;
+}
+
+.feature-card {
+    flex: 1;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    border-left: 5px solid #007bff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.feature-card h4 {
+    color: #007bff;
+    font-size: 1.4em;
+    margin-top: 0;
+}
+
+/* 💡 NEW: Impact Counter Section Styles */
+.impact-counter-section {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 30px 0;
+    margin: 40px 0;
+    background-color: #f0f8ff; /* Light blue background */
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.impact-stat-card {
+    flex: 1;
+    text-align: center;
+    border-right: 1px solid #ddd;
+}
+
+.impact-stat-card:last-child {
+    border-right: none;
+}
+
+.impact-value {
+    font-size: 2.5em;
+    font-weight: 900;
+    color: #28a745; /* Green for positive impact */
+    margin: 0 0 5px 0;
+}
+
+.impact-label {
+    font-size: 0.9em;
+    color: #666;
+    margin: 0;
+}
+
+/* 💡 NEW: Testimonials Section Styles */
+.testimonials-section {
+    margin-top: 60px;
+    margin-bottom: 50px;
+}
+
+.testimonials-section h3 {
+    color: #007bff;
+    font-size: 2em;
+    margin-bottom: 30px;
+}
+
+.testimonials-scroll-wrapper {
+    display: flex;
+    overflow-x: auto; /* Enables horizontal scrolling */
+    gap: 30px;
+    padding: 10px 0;
+    -webkit-overflow-scrolling: touch; /* Improves scrolling on iOS */
+    /* Hide scrollbar for a cleaner look */
+    scrollbar-width: none; /* Firefox */
+}
+
+.testimonials-scroll-wrapper::-webkit-scrollbar {
+    display: none; /* Chrome, Safari */
+}
+
+.testimonial-card {
+    min-width: 300px; /* Fixed width for each card */
+    padding: 30px;
+    background-color: #f7f7f7;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    flex-shrink: 0; /* Prevents cards from shrinking */
+    text-align: left;
+    border-top: 5px solid #28a745; /* Green highlight */
+}
+
+.testimonial-quote {
+    font-style: italic;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.testimonial-author {
+    font-weight: bold;
+    color: #007bff;
+    text-align: right;
+    margin: 0;
+    font-size: 0.9em;
+}
+
+
+/* Footer */
+.landing-footer {
+    padding: 20px;
+    width: 100%;
+    background-color: #f4f7f6;
+    border-top: 1px solid #ddd;
+    color: #666;
+    margin-top: 50px;
+}
+
+/* ------------------------------------ */
+/* --- Login Page Styles (NEW) --- */
+/* ------------------------------------ */
+
+.login-container {
+    max-width: 400px;
+    margin: 100px auto 0;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.login-title {
+    color: #007bff;
+    margin-bottom: 5px;
+    font-size: 2em;
+}
+
+.login-subtitle {
+    color: #6c757d;
+    margin-bottom: 25px;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.form-group {
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* 💡 NEW STYLES for the Password Toggle Feature */
+.password-input-container {
+    position: relative;
+    display: flex; /* Ensures input and button are side-by-side */
+    align-items: center;
+}
+
+.password-input-container input {
+    /* Ensures the input takes up all available space inside the flex container */
+    flex-grow: 1; 
+    padding-right: 40px !important; /* Overrides default input padding to make space for the button */
+}
+
+.password-toggle-btn {
+    position: absolute;
+    right: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    font-size: 1.2em;
+    z-index: 10;
+    line-height: 1;
+}
+
+/* Existing input styles need to be kept for all other inputs */
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.login-error {
+    color: #dc3545;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.login-btn {
+    background-color: #007bff; /* Primary color for login */
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: bold;
+    margin-top: 10px;
+    transition: background-color 0.2s;
+}
+
+.login-btn:hover {
+    background-color: #0056b3;
+}
+
+.login-hint {
+    margin-top: 25px;
+    font-size: 0.85em;
+    color: #6c757d;
+    border-top: 1px dashed #eee;
+    padding-top: 15px;
+}
+
+/* ------------------------------------ */
+/* --- Mobile Responsiveness (Max 768px) --- */
+/* ------------------------------------ */
+
+@media (max-width: 768px) {
+    
+    .App-header h1 {
+        font-size: 1.8em;
+    }
+    
+    /* Landing Page Mobile Adjustments */
+    .landing-page {
+        padding-top: 20px;
+    }
+
+    .landing-title {
+        font-size: 2.5em;
+    }
+    
+    .landing-subtitle {
+        font-size: 1.2em;
+    }
+
+    .landing-hero {
+        flex-direction: column;
+        padding: 40px 20px;
+    }
+
+    .hero-content {
+        max-width: 100%;
+        text-align: center;
+        padding: 0 10px;
+        order: 2; 
+    }
+
+    .hero-image {
+        order: 1;
+        margin-bottom: 20px;
+    }
+
+    .hero-content h2 {
+        font-size: 1.8em;
+    }
+
+    .features-grid {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .feature-card {
+        padding: 20px;
+    }
+    
+    .landing-cta-btn {
+        width: 100%;
+        padding: 15px 0;
+    }
+    
+    /* Login Page Mobile Adjustments */
+    .login-container {
+        margin: 50px 10px 0;
+        padding: 20px;
+        max-width: none;
+    }
+    
+    /* 💡 Impact Counter Mobile Adjustments */
+    .impact-counter-section {
+        flex-direction: column; /* Stack stats vertically */
+        padding: 20px;
+    }
+
+    .impact-stat-card {
+        padding: 15px 0;
+        border-right: none;
+        border-bottom: 1px solid #ddd;
+        width: 100%;
+    }
+    
+    .impact-stat-card:last-child {
+        border-bottom: none;
+    }
+    
+    .impact-value {
+        font-size: 2em;
+    }
+    
+    /* 💡 Testimonials Mobile Adjustments (Keep horizontal scroll) */
+    .testimonial-card {
+        min-width: 80vw; /* Take up most of the screen width */
+    }
+
+    /* Dashboard Summary Cards (Stacking) */
+    .summary-cards-container {
+        flex-direction: column; 
+    }
+
+    .summary-card {
+        margin: 10px 0; 
+        flex: none;
+    }
+    
+    /* Transaction Form (Stacking) */
+    .transaction-form-layout {
+        flex-direction: column; 
+        align-items: stretch;
+        padding: 15px;
+        gap: 10px;
+    }
+
+    .transaction-form-layout label {
+        width: 100%; 
+    }
+
+    .transaction-form-layout button {
+        margin-top: 10px;
+        width: 100%;
+    }
+
+    /* Reduce padding on the main container for small screens */
+    .cfcs-container {
+        padding: 10px;
+    }
+
+    /* Report View Responsiveness */
+    .full-list-section {
+        overflow-x: auto;
+    }
+    .report-table {
+        min-width: 450px; 
+    }
+    .report-view {
+        padding: 10px;
+    }
+    
+    /* Full Screen Details View Mobile Adjustments */
+    .full-screen-details-view,
+    .viewer-view {
+        padding: 10px;
+    }
+    .full-details-table-wrapper,
+    .viewer-table-wrapper {
+        overflow-x: auto;
+    }
+    .full-details-header,
+    .viewer-header {
+        margin-bottom: 10px;
+    }
+
+    /* Mobile adjustment for report header buttons to stack */
+    .report-header > div,
+    .full-details-header > div {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .report-header .report-details-btn,
+    .report-header .report-close-btn,
+    .full-details-header .report-details-btn,
+    .full-details-header .close-details-btn {
+        margin: 0;
+        width: 100%; /* Make buttons full width */
+    }
+}
