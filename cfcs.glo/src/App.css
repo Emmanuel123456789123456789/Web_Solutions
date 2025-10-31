@@ -828,7 +828,7 @@ body {
         padding: 10px;
     }
     .full-details-table-wrapper,
-    .viewer-table-wrapper {
+    .viewer-table-wrapper {                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
         overflow-x: auto;
     }
     .full-details-header,
@@ -849,4 +849,26 @@ body {
         margin: 0;
         width: 100%; /* Make buttons full width */
     }
+}
+@media print {
+  body {
+    background: white !important;
+  }
+
+  button,
+  .print-btn,
+  .close-viewer-btn {
+    display: none !important;
+  }
+
+  .viewer-content-card {
+    box-shadow: none !important;
+    border: none !important;
+    width: 100%;
+  }
+
+  @page {
+    size: A4 portrait;
+    margin: 15mm;
+  }
 }

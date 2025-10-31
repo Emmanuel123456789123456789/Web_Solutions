@@ -78,7 +78,7 @@ const Login = ({ onLoginSuccess }) => {
       </form>
 
       <p className="login-hint">
-        **Admin Demo:** (User: kate, Pass: Admin123) | **Viewer Demo:** (User: church, Pass: Viewer123)
+        **Admin Demo:** (User: Jesus, Pass: Jesusislord) | **Viewer Demo:** (User: Jesus, Pass: Jesusislord)
       </p>
     </div>
   );
